@@ -2,7 +2,7 @@
 
 #### Description
 
-##### Table Talk
+##### DeveloperToob
 
 A place where developers can have active conversations about content surrounding software development!
 
