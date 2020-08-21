@@ -1,27 +1,22 @@
 # Project Overview
 
+## Project Description
+
+For Project Three of the General Assembly SEI course, we were assigned to create a website that shows our knowledge and understanding of CRUD and RESTful APIs. We have to create the backend using Ruby on Rails. We create our frontend using HTML, CSS, and JavaScript.
+
+For this project, we will be building a video hosting website (using Youtube API) and host videos pertaining specifically to web developers. Using Ruby on Rails, we create different models to represent how users can input their data. Afterwards, we worked on controllers that will allow users to create, read, update, and delete (CRUD) their information on the website. Finally, we need to put them in the routes so the backend and the frontend can communicate with one another.
+
 ## Project Schedule
 
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
+Here is our schedule for each day and what we hope to accomplish. This is to keep track of how our project is going.
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1| Project Description | Incomplete
-|Day 1| Wireframes / Priority Matrix / Timeline `backend` and `frontend`| Incomplete
-|Day 2| Working RestAPI | Incomplete
-|Day 3| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Day 4| MVP & Bug Fixes | Incomplete
-|Day 5| Final Touches and Present | Incomplete
-
-## Project Description
-
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
-
-## Google Sheet
-
-Include link to your google sheet here.  Here is the sample [Suresh had used in class](https://docs.google.com/spreadsheets/d/1V1M3Eq1NXH2PNmeTlVviRhEjX9kenq769Vo2P5mMtro/edit#gid=0) 
+|Monday, August 24th (Day 1)| Project Description / Wireframes / Priority Matrix / Timeline `backend` and `frontend` | Complete
+|Tuesday, August 25th (Day 2)| Working on RestAPI | Incomplete
+|Wednesday, August 26th (Day 3)| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|Thursday, August 27th (Day 4)| MVP & Bug Fixes | Incomplete
+|Friday, August 28th (Day 5)| Final Touches and Present | Incomplete
 
 ## Wireframes
 
@@ -31,68 +26,58 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 - [Tablet](https://git.generalassemb.ly/SEIR-629/project-1-portfolio/blob/master/readme-assets/nav-highlight.gif)
 - [Desktop](https://git.generalassemb.ly/SEIR-629/project-1-portfolio/blob/master/readme-assets/desktop.png)
 
-Wireframing Resources:
+## Time / Priority Matrix 
 
-- [Mockflow](https://mockflow.com/app/#Wireframe)
-- [Figma](https://www.figma.com/)
+- [Time / Priority Matrix](https://res.cloudinary.com/dpggcudix/image/upload/v1598046174/Screen_Shot_2020-08-21_at_5.42.34_PM_z3asuy.png)
 
-
-## Time/Priority Matrix 
-
-Include a full list of features that have been [prioritized](https://res.cloudinary.com/doaftkgbv/image/upload/v1583773146/ValueVSComplexity_u2inhx.png) based on the `Time and Priority` Matix.  This involves drawing a a square.  In the middle of the square, on the x axis draw a line.  The most left part of the line should start with 0hrs and the end of the line should include 2hrs.  This line will be used to estimate how much time any one feature will take to complete. 
-
-Now draw a vertical line on the y axis.  The top of this line should have `High` and the bottom `Low`.  This line will be used to assign a priority to to each feature you wish to include in the project.  
-
-Now create a separate list starting with A and assign it one of the features.  Continue to assign each feature a letter.  Once complete add each letter to the matrix assigning based on what your feel it's prioirty is an how long it will take to implement. If any one feature takes longer than 2hrs to complete than break it down into smaller tasks and reassign them a new letter. 
-
-Once complete tally up the time and determine how long the project will take to complete. Now break those features into MVP and PostMVP so you can guarantee you will have a fully functioning project to demo. 
-
-### MVP/PostMVP - 5min
+### MVP / PostMVP - 5min
 
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
-#### MVP (examples)
+#### MVP 
 
-- Pull data using google json api
-- Render data on page 
-- Allow user to choose favorites 
-- Save their choices in firebase
+- Build and Test Authentication (JWT)
+- Build Models 
+- Test Models with Authentication 
+- Testing done on Postman
+- Deploy and Test Deployed API
+- Importing all the dependencies on our Gemfile
+- Create the controllers
+- Create the routes
 
 #### PostMVP 
 
-- Anything else that is not MVP
+- Search functionality
+- More models
+- Categorizing videos
+- Fixing errors
+- Refactoring
 
 ## Functional Components
 
-Based on the initial logic defined in the previous sections try and breakdown the logic further into functional components, and by that we mean functions.  Try and capture what logic would need to be defined if the game was broken down into the following categories.
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
-
 #### MVP
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Hamburger | H | 1hr | 1.5hr | -hr|
-| Project Previews | H | 3hr | -hr | -hr|
-| Regular Nav | H | H | -hr | -hr|
-| Adding Form | H | 1.5hr| -hr | -hr |
-| Other sections and flex| M | 4hr | 2hr | -hr|
-| Working with API | H | 3hrs| 2hr | -hr |
-| Responsive | H | 3hr | -hr | -hr|
-| Social Media Icons | L | 1hr | -hr | -hr|
-| Total | H | 15.5hrs| -hrs | -hrs |
+| Importing Dependencies | L | 0hr | 0hr | 0hr|
+| Create Models | H | 3hr | -hr | -hr|
+| Creating Seed | L | 3hr | -hr | -hr|
+| Creating Controllers | H | 6hr| -hr | -hr |
+| Creating Routes | M | 1hr | -hr | -hr|
+| Testing Routes | H | 3hrs| -hr | -hr |
+| Deployment and Testing on Deployed Website | H | 2hr | -hr | -hr|
+| Authentication | H | 2hr | -hr | -hr|
+| Total | H | 19hrs| -hrs | -hrs |
 
 #### PostMVP
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Project Hover | L | 3hr | -hr | -hr|
-| Banner letters wiggle | L | 1hr | -hr | -hr|
-| Interactive Banner | M | 4hr | -hr | -hr|
-| Materialize | H | 4hr | -hr | -hr|
-| Bootstrap | H | 4hr | -hr | -hr|
-| Make own icon | L | 4hr | -hr | -hr|
-| Total | H | 20hrs| -hrs | -hrs |
+| Search Functionality | L | 2hr | -hr | -hr|
+| Categorizing Videos | L | 3.5hr | -hr | -hr|
+| Total | H | 5.5hrs| -hrs | -hrs |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project. 
+ Use this section to list all supporting libraries and their role in the project. 
+ 
+ - Youtube API
 
 ## Code Snippet
