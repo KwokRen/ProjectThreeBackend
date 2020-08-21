@@ -1,108 +1,46 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Unit 3 (Group Project)
-## Build a full CRUD website + RUBY RAILS REST API with JWT
+#### Website Link
 
-## Overview
-Your last project taught you how to build an API application with Express and
-Mongoose. This project will have you build a full stack application with a
-similar API backend as well as a frontend.
+#### Description
 
-Your instructors have organized you and your classmates into groups to design
-and build an app with two major components:
+Finding it hard to follow through on plans for a exercise regimen? Never fear, OnTrack is here to keep you on track! OnTrack is a free website application that you can use to keep track of your routines and meals for the day. 
 
-1. An API of your own design (built using Ruby on Rails, PostgreSQL, and JWT) that
-   serves JSON.
-2. A front-end application that updates the UI and makes requests to the
-   API.
+Users can navigate to the exercise tracker, and create up to three routines per day. In addition to the routines, you can describe the difficulty, the amount of sets and reps you plan to do and even add a link to an instructional video! While you create your exercise, you can also implement your meals for the day (which will be shown in the food tracker below the exercise tracker). The best part is, you can create multiple plans for different days. Cross off any exercises you finish and you can edit or delete any entries anytime!
 
-**This is meant to push you both technically and collaboratively.** You will be
-joining a development team during your career. Working collaboratively is a
-learned skill, just like programming. It's important to learn how to work
-together.
+The website is made with HTML, CSS, and JavaScript in the frontend. I also used the BootStrap library and icons from FontAwesome. In the backend, I used express to create APIs. With Heroku, MongoDB Atlas, and Netlify, I was able to create a full CRUD (create, read, update, and delete) application. I intend of updating it as I learn more developer languages and skills both in the frontend and backend.
 
----
 
-## Requirements
-It is important to keep in mind the goal of this program and these projects,
-they are to utilize the skills you have been taught and the skills that
-employers care about. You should strive to build projects that will catch an
-employers eye and get you hired.
+#### Technologies
 
-### Technical Requirements
-Two separate repo's are requied for this project, one for the `Back-End` and one for the `Front-End`. They must not reside on the same repo. 
+*Frontend*
 
-**Back-End Requirements:**
+<img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/600px-HTML5_Badge.svg.png" width="50" height="50">
+<img src ="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" width="50" height="50">
+<img src ="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" width="50" height="50">
+<img src ="https://www.netlify.com/img/press/logos/logomark.png" width="50" height="50">
 
-- Your back-end must be consist of Ruby on Rails Restful API at least 2
-  models, more if needed, with associations and security (JWT).
-- Must have Create, Read, Update, and Destroy functionality built throughout the
-  app (i.e. You don't need full CRUD on every model, just full CRUD throughout
-  your models where it makes sense).
+*Backend*
 
-**Front-End Requirements:**
-- Your front-end must use JQuery and leverage the backend API.
-- You must communicate with the back-end API RESTfully to Create, Read, Update, and Destroy resources.
-- Your frontend must be responsive and work on mobile phones, tablets, and desktops.
-- Your front-end must allow users to login via the RestAPI call.
-- A mobile nav that expands and collapses when a user clicks on the hamburger icon.
+<img src ="https://expressjs.com/images/express-facebook-share.png" width="100" height="50">
+<img src ="https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png" width="50" height="50">
+<img src ="https://cdn.worldvectorlogo.com/logos/mongodb.svg" width="50" height="50">
+<img src ="https://cdn.iconscout.com/icon/free/png-512/heroku-5-569467.png" width="50" height="50">
 
-Review the [Rubric](https://git.generalassemb.ly/SEIR-629/PROJECT-3/blob/master/evaluation-rubric.md) for the specifics of how your project will
-be graded.
+#### Features
 
-### Necessary Deliverables
-Your submission must include **all** of the following:
+- Users can create new day entries
+- Users can select which dates to appear on the tracker
+- Users can cross off routines they have done
+- Users can edit and delete their date
+- Users can add their meals and cross off foods they've already eaten
+- Users can edit their food choices
+- Accessible over all media devices
+- Hovering over things have different effects
 
-#### Project Idea and Initial Planning
-By the end of Day 1 you need to submit:
+#### Future Implementation (Backend)
 
-1. Your project idea (a brief 2-3 sentence description of your app)
-2. A list of your models and their properties
-3. Link to the `frontend` repository with project worksheet
-4. Link to the `backend` repository with project worksheet
-
-These and any other planning assets (wireframes, user stories, etc) should go
-inside a `planning/` directory inside your `backend` and `frontend` project repository accordingly.
-
-### Suggested Ways to Start
-
-- **Don’t hesitate to write throwaway code** to solve short-term problems.
-- **Read the docs for whatever technologies, frameworks, or APIs you use**.
-- **Write your code DRY** and **build your APIs RESTful**.
-- **Commit early, commit often**. Don’t be afraid to break something because you can always go back in time to a previous version.
-- **Keep user stories small and well-defined**. Remember – user stories focus on what a user needs, not what development tasks need accomplishing.
-- **Write code another developer wouldn't have to ask you about**. Do your naming conventions make sense? Would another developer be able to look at your app and understand what everything is?
-- **Make it all well-formatted**. Are you indenting, consistently? Can we find the start and end of every div, curly brace, etc.?
-- **Comment your code**. Will someone understand what is going on in each block or function? Even if it's obvious, explaining the what & why means someone else can pick it up and get it.
-- **Write pseudocode before you write actual code**. Thinking through the logic of something helps.
-
-### Final Application
-
-Your project is due on the last day of Project Week. Create an issue on this repo containing:
-
-- A link to your deployed application
-- A link to your Project 2 Github repositories
-
-The repository for your backend API should include:
-
-- A working JSON API built using Express and Mongoose that meets the technical requirements above.
-- Frequent commits dating back to the very beginning of the project.
-- A `planning/` directory in the root of your `backend` and `frontend` repo that contains a `readme` with all: 
-    - A couple of paragraphs about the **general approach you took**.
-    - Link to your **user stories** – who are your users, what do they want, and why?
-    - Link to your **wireframes** – sketches of  views and interfaces in your application.
-    - Link to your **Time/Priority** matrix 
-    - Table including functionality and estimated/actual time for completion
-    - Descriptions of any **unsolved problems** or **hurdles** you had to overcome.
-
-The repository for the frontend of your application should include:
-
-- A working frontend application built with HTML, CSS, Bootstrap, JQuery ect.
-- CRUD functionality
-- Frequent commits dating back to the very beginning of the project.
-- Mobile first, responsive web application (Mobile, Tablet and Desktop).
-
-#### Deployment
-
-- Your API Backend must be deployed to Heroku and your front-end must be deployed to
-  Netlify. Applications that are not deployed will be considered incomplete.
- 
----
+- A new model Schema for Login (Username and Password)
+- Updating Fitness Schema to add a Calories section
+- A new model Schema for reviews / testimonies
+- Refactoring code
+- Learn how to use reference ObjectId's in a easier way
+- Adding more routes (i.e. deleting one food, creating food seperately)
