@@ -6,3 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Video.create("title": 'Video1  Title', like_count: 202, dislike_count: 32, videoID: 'PkZNo7MFNFg')
