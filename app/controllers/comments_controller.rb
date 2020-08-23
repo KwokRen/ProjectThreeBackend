@@ -15,6 +15,20 @@ class CommentsController < ApplicationController
     end
   end
 
+  def update
+    if (@single_update_comment = Comment.find(params[:id])).present?
+      @single_update_comment.update(comment_params)
+      render :json => {
+          :response => 'Successfully updated comment',
+          :data => @single_update_comment
+      }
+    else
+      render :json => {
+          :response => 'Cannot update the selected comment'
+      }
+    end
+  end
+
   def destroy
     if (@single_destroy_comment = Comment.find(params[:id])).present?
       @single_destroy_comment.destroy
