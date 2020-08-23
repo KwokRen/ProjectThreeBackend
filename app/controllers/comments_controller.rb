@@ -1,8 +1,30 @@
 class CommentsController < ApplicationController
-  before_action :authorized
+  before_action :authorized, except: [:videocomments]
   # /comments#create
+
+  def videocomments
+    if Video.exists?(params[:video_id])
+      if (@video_comments = Comment.where(video_id:(params[:video_id]))).empty?
+        render :json => {
+            :response => 'There are no comments to display'
+        }
+      else
+        render :json => {
+            :response => 'Here are the comments for this video',
+            :data => @video_comments
+        }
+      end
+    else
+      render :json => {
+          :response => 'This video does not exist'
+      }
+    end
+  end
+
   def create
     @new_comment = Comment.new(comment_params)
+    @new_comment.video_id = params[:video_id]
+    @new_comment.user_id = params[:user_id]
     if @new_comment.save
       render :json => {
           response: "created comment",
