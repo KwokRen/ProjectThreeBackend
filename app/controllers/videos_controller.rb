@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_action :authorized, except: [:index]
+  before_action :authorized, except: [:index, :show]
 
   def index
     @all_videos = Video.all
@@ -15,4 +15,19 @@ class VideosController < ApplicationController
       }
     end
   end
+
+  def show
+    @one_video = Video.exists?(params[:id])
+    if @one_video
+      render :json => {
+          :response => 'Found Video Successful',
+          :data => Video.find(params[:id])
+      }
+    else
+      render :json => {
+          :response => 'No Video Found'
+      }
+    end
+  end
+
 end
