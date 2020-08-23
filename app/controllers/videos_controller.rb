@@ -15,4 +15,19 @@ class VideosController < ApplicationController
       }
     end
   end
+
+  def show
+    @one_video = Video.exists?(params[:id])
+    if @one_video
+      render :json => {
+          :response => 'Found Video Successful',
+          :data => @one_video
+      }
+    else
+      render :json => {
+          :response => 'No Video Found'
+      }
+    end
+  end
+
 end
