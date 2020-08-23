@@ -38,29 +38,68 @@ class CommentsController < ApplicationController
   end
 
   def update
-    if (@single_update_comment = Comment.find(params[:id])).present?
-      @single_update_comment.update(comment_params)
-      render :json => {
-          :response => 'Successfully updated comment',
-          :data => @single_update_comment
-      }
+    if Video.exists?(params[:video_id])
+      if Comment.where(video_id:params[:video_id]).empty?
+        render :json => {
+            :response => 'There are no comments for this video'
+        }
+      else
+        if @user.id == params[:user_id].to_i
+          if (@video_comments = Comment.where(video_id:params[:video_id], user_id:params[:user_id], id:params[:id])).present?
+            @video_comments.update(comment_params)
+            render :json => {
+              :response => 'Successfully updated comment',
+              :data => @video_comments
+            }
+          else
+            render :json => {
+              :response => 'Cannot update the selected comment'
+            }
+          end
+        else
+          render :json => {
+              :response => 'You are not authorized to edit this post',
+              :responseTwo => @user.id,
+              :responseThree => params[:user_id]
+          }
+        end
+      end
     else
       render :json => {
-          :response => 'Cannot update the selected comment'
+          :response => 'Cannot find video'
       }
     end
   end
 
   def destroy
-    if (@single_destroy_comment = Comment.find(params[:id])).present?
-      @single_destroy_comment.destroy
-      render :json => {
-          :response => "Successfully deleted the selected comment.",
-          :data => @single_destroy_comment
-      }
+    if Video.exists?(params[:video_id])
+      if Comment.where(video_id:params[:video_id]).empty?
+        render :json => {
+            :response => 'There are no comments for this video'
+        }
+      else
+        if @user.id == params[:user_id].to_i
+          if (@delete_comments = Comment.where(video_id:params[:video_id], user_id:params[:user_id], id:params[:id])).present?
+            @delete_comments.destroy(params[:id])
+            render :json => {
+                :response => 'Successfully deleted comment',
+                :data => @delete_comments
+            }
+          else
+            render :json => {
+                :response => 'Cannot delete the selected comment'
+            }
+          end
+        else
+          render :json => {
+              :response => 'You are not authorized to delete this post',
+              :responseTwo => params[:user_id]
+          }
+        end
+      end
     else
       render :json => {
-          :error => 'The selected comment cannot be deleted.'
+          :response => 'Cannot find video'
       }
     end
   end
