@@ -4,8 +4,8 @@ class CreateVideos < ActiveRecord::Migration[6.0]
       t.string :title
       t.integer :like_count
       t.integer :dislike_count
-      # When a comment is created
       t.string :videoID
+      t.string :thumb_med
       t.references :comment, null: true, foreign_key: true
       t.timestamps
     end
