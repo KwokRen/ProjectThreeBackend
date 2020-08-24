@@ -5,7 +5,7 @@ class CreateVideos < ActiveRecord::Migration[6.0]
       t.integer :like_count
       t.integer :dislike_count
       t.string :videoID
-      t.string :thumb_med
+
       t.references :comment, null: true, foreign_key: true
       t.timestamps
     end
