@@ -1,5 +1,6 @@
 class VideosController < ApplicationController
-  before_action :authorized, except: [:index, :show]
+  # WARNING: The :create method does not require auth, it should not be pushed to Production
+  before_action :authorized, except: [:index, :show, :create]
 
   def index
     @all_videos = Video.all
@@ -28,6 +29,25 @@ class VideosController < ApplicationController
           :response => 'No Video Found'
       }
     end
+  end
+
+  def create
+    @new_video = Video.new(video_params)
+    if @new_video.save
+      render :json => {
+          :response => "Success",
+          :data => @new_video
+      }
+    else
+      render :json => {
+          :error => "Could not create video"
+      }
+    end
+  end
+
+  private
+  def video_params
+    params.permit(:title, :like_count, :dislike_count, :videoID)
   end
 
 end
