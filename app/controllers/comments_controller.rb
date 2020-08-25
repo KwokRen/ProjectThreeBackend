@@ -4,15 +4,17 @@ class CommentsController < ApplicationController
 
   def videocomments
     if Video.exists?(params[:video_id])
-      if (@video_comments = Comment.where(video_id:(params[:video_id]))).empty?
+      if (@video_comments = Comment.where(video_id:params[:video_id])).empty?
         render :json => {
             :response => 'There are no comments to display'
         }
       else
         render :json => {
             :response => 'Here are the comments for this video',
-            :data => @video_comments
-        }
+            :data => @video_comments,
+            :data2 => User.where(id:Comment.where(user_id:Video.where(id:params[:video_id])))
+                # User.where(id:Comment.where(video_id:params[:video_id]))
+          }
       end
     else
       render :json => {
