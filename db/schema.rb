@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_22_153700) do
+ActiveRecord::Schema.define(version: 2020_08_26_155750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,9 @@ ActiveRecord::Schema.define(version: 2020_08_22_153700) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "video_id", null: false
     t.index ["user_id"], name: "index_comments_on_user_id"
+    t.index ["video_id"], name: "index_comments_on_video_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,12 +37,16 @@ ActiveRecord::Schema.define(version: 2020_08_22_153700) do
     t.integer "like_count"
     t.integer "dislike_count"
     t.string "videoID"
-    t.bigint "comment_id"
+    t.bigint "comment_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "thumb_default"
+    t.string "thumb_medium"
+    t.string "thumb_high"
     t.index ["comment_id"], name: "index_videos_on_comment_id"
   end
 
   add_foreign_key "comments", "users"
+  add_foreign_key "comments", "videos"
   add_foreign_key "videos", "comments"
 end
