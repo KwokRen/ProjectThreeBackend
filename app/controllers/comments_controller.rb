@@ -9,12 +9,7 @@ class CommentsController < ApplicationController
             :response => 'There are no comments to display'
         }
       else
-        render :json => {
-            :response => 'Here are the comments for this video',
-            :data => @video_comments,
-            :data2 => User.where(id:Comment.where(user_id:Video.where(id:params[:video_id])))
-                # User.where(id:Comment.where(video_id:params[:video_id]))
-          }
+        render json: @video_comments, include: :user
       end
     else
       render :json => {
