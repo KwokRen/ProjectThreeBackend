@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 
   def videocomments
     if Video.exists?(params[:video_id])
-      if (@video_comments = Comment.where(video_id:params[:video_id])).empty?
+      if (@video_comments = Comment.where(video_id:params[:video_id]).order(created_at: :desc)).empty?
         render :json => {
             :response => 'There are no comments to display'
         }
