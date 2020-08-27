@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   post "/login", to: "users#login"
   get "/auto_login", to: "users#auto_login"
   get "/videos/:video_id/comments", to:"comments#videocomments"
+  post "/users/unique", to: "users#is_unique"
 end
