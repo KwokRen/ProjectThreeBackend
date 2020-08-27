@@ -29,6 +29,17 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def is_unique
+    @username = params[:username]
+    if User.where(username: @username).empty?
+      render :json => {
+          :response => true
+      }
+    else
+      render :json => { :response => false }
+    end
+  end
+
   private
 
   def user_params
