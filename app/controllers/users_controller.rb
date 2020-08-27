@@ -33,12 +33,10 @@ class UsersController < ApplicationController
     @username = params[:username]
     if User.where(username: @username).empty?
       render :json => {
-          :response => "Username is available"
+          :response => true
       }
     else
-      render :json => {
-          :response => "Username not available"
-      }
+      render :json => { :response => false }
     end
   end
 
