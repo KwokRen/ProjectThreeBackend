@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_action :authorized, except: [:index, :show, :create]
+  before_action :authorized, except: [:index, :show, :create, :get_likes]
 
   def index
     @all_videos = Video.all
@@ -57,10 +57,41 @@ class VideosController < ApplicationController
       }
     end
   end
+
+  def add_liked
+    @new_like = Like.new(video_likes_and_dislikes_params)
+    if @new_like.save
+      render :json => {
+          :response => "is_liked updated",
+          :data => @new_like
+      }
+    else
+      render :json => {
+          :error => "error"
+      }
+    end
+
+  end
+
+  def get_likes
+
+    if !(Like.where(video_id:params[:video_id])).empty?
+      render :json => {
+          :likes => Like.where(video_id:params[:video_id], is_liked:true).count,
+          :dislikes => Like.where(video_id:params[:video_id], is_liked:false).count
+      }
+    else
+      render :json => {
+          :likes => 0,
+          :dislikes => 0
+      }
+    end
+  end
   private
+  
 
   def video_likes_and_dislikes_params
-    params.permit(:like_count, :dislike_count)
+    params.permit(:video_id, :user_id, :is_liked)
   end
 
   def video_params

@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   get "/auto_login", to: "users#auto_login"
   get "/videos/:video_id/comments", to:"comments#videocomments"
   post "/users/unique", to: "users#is_unique"
+  get "/likes/:video_id/likes", to: "videos#get_likes"
+  post "/video/like", to: "videos#add_liked"
+  put "/video/stats", to: "videos#changeVote"
 end
