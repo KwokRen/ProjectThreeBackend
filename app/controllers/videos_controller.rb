@@ -58,20 +58,6 @@ class VideosController < ApplicationController
     end
   end
 
-  def add_liked
-    @new_like = Like.new(video_likes_and_dislikes_params)
-    if @new_like.save
-      render :json => {
-          :response => "is_liked updated",
-          :data => @new_like
-      }
-    else
-      render :json => {
-          :error => "error"
-      }
-    end
-
-  end
 
   def get_likes
 
@@ -87,8 +73,25 @@ class VideosController < ApplicationController
       }
     end
   end
+
+  def changeVote
+
+    if Like.exists?(video_id:params[:video_id], user_id:params[:user_id])
+      @update_is_liked = Like.update(is_liked:params[:is_liked])
+      render :json => {
+          :response => "Changed value",
+          :data => @update_is_liked
+      }
+    else
+      render :json => {
+          :response => "Created like"
+      }
+    end
+
+  end
+
   private
-  
+
 
   def video_likes_and_dislikes_params
     params.permit(:video_id, :user_id, :is_liked)
