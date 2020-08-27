@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_action :authorized, except: [:index, :show]
+  before_action :authorized, except: [:index, :show, :create]
 
   def index
     @all_videos = Video.all
@@ -28,6 +28,24 @@ class VideosController < ApplicationController
           :response => 'No Video Found'
       }
     end
+  end
+
+  def create
+    @new_video = Video.new(video_params)
+    if @new_video.save
+      render :json => {
+          :response => "Success",
+          :data => @new_video
+      }
+    else
+      render :json => {
+          :error => "Could not create video"
+      }
+    end
+  end
+  private
+  def video_params
+    params.permit(:title, :like_count, :dislike_count, :videoID, :thumb_default, :thumb_medium, :thumb_high)
   end
 
 end
