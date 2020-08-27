@@ -30,6 +30,20 @@ class VideosController < ApplicationController
     end
   end
 
+  def update
+    @update_video = Video.where(id:params[:id])
+    if @update_video.empty?
+      render :json => {
+          :response => "This video does not exist"
+      }
+    else
+      @update_video.update(video_likes_and_dislikes_params)
+      render :json => {
+          :data => @update_video
+      }
+    end
+  end
+
   def create
     @new_video = Video.new(video_params)
     if @new_video.save
@@ -44,6 +58,11 @@ class VideosController < ApplicationController
     end
   end
   private
+
+  def video_likes_and_dislikes_params
+    params.permit(:like_count, :dislike_count)
+  end
+
   def video_params
     params.permit(:title, :like_count, :dislike_count, :videoID, :thumb_default, :thumb_medium, :thumb_high)
   end
