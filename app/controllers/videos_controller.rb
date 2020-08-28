@@ -37,7 +37,7 @@ class VideosController < ApplicationController
           :response => "This video does not exist"
       }
     else
-      @update_video.update(video_likes_and_dislikes_params)
+      @update_video.update(like_params)
       render :json => {
           :data => @update_video
       }
@@ -62,6 +62,10 @@ class VideosController < ApplicationController
 
   def video_params
     params.permit(:title, :like_count, :dislike_count, :videoID, :thumb_default, :thumb_medium, :thumb_high)
+  end
+
+  def like_params
+    params.permit( :like_count, :dislike_count)
   end
 
 end
