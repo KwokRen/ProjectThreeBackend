@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post "/users/unique", to: "users#is_unique"
 
   get "/video/:video_id/likes", to: "likes#show"
+  get "/likes/show/:video_id/user/:user_id", to: "likes#show_user_vote"
   put "/likes/:video_id/users/:user_id", to: "likes#update"
   post "/likes/video/:video_id/users/:user_id", to: "likes#create"
   delete "/video/:video_id/:user_id/likes/:is_liked", to: "likes#destroy"

@@ -16,28 +16,52 @@ class LikesController < ApplicationController
     end
   end
 
+  def show_user_vote
+    if (@user_vote = Like.where(video_stats_params)).empty?
+      render :json => {
+          :response => "no vote"
+      }
+    else
+      render :json => {
+          :response => "voted",
+          :data => @user_vote
+      }
+    end
+  end
+
   def create
-    # Check whether video_id is valid
+    #Check whether user_id field is valid
     if !params[:user_id].empty?
       if (Like.where(video_stats_params)).empty?
-        @new_like = Like.new(like_params)
-        @new_like.save
+        # if there is no like in DB then create i
+        @new_like = Like.create(like_params)
         render :json => {
             :response => "liked/disliked!"
         }
       else
-        @user_like = Like.where(video_stats_params).ids
-        Like.destroy(@user_like)
-        render :json => {
-            :response => "Removed like/dislike",
-            :data => @user_like
-        }
+        # If there is a like compare with :is_liked
+        # If values don't match, update
+        if (@user_like = Like.where(video_stats_params, is_liked:params[:is_liked])).empty?
+          @updated_like = Like.update(@user_like.ids, is_liked:params[:is_liked])
+          render :json => {
+              :response => "updated is_liked value"
+          }
+        else
+          # if a record is found then destroy the record
+          Like.destroy(@user_like.ids)
+          render :json => {
+              :response => "Removed record",
+              :data => @user_like
+          }
+        end
       end
     else
       render :json => {
           :response => "Log in to vote"
       }
     end
+
+
 
   end
 

@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_action :authorized, except: [:index, :show, :create, :get_likes]
+  before_action :authorized, except: [:index, :show, :create, :update]
 
   def index
     @all_videos = Video.all
