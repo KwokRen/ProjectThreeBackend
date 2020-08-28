@@ -10,8 +10,22 @@ class LikesController < ApplicationController
       }
     else
       render :json => {
-          :likes => Like.where(:video_id => params[:video_id], is_liked:true).count,
-          :dislikes => Like.where(:video_id => params[:video_id], is_liked:false).count
+          :likes => Like.where(:video_id => params[:video_id], is_liked:true),
+          :dislikes => Like.where(:video_id => params[:video_id], is_liked:false)
+      }
+    end
+  end
+
+  def showunique
+    if Like.where(video_stats_params).empty?
+      render :json => {
+          :response => "empty",
+          :data => Like.where(video_stats_params)
+      }
+    else
+      render :json => {
+          response => "not empty",
+          :data => Like.where(video_stats_params)
       }
     end
   end
@@ -22,7 +36,8 @@ class LikesController < ApplicationController
       @new_like = Like.new(like_params)
       @new_like.save
       render :json => {
-          :response => "liked/disliked!"
+          :response => "liked/disliked!",
+          :data => @new_like
       }
     else
       @user_like = Like.where(video_stats_params).ids
