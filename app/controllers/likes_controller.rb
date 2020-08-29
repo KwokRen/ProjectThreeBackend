@@ -34,7 +34,7 @@ class LikesController < ApplicationController
     if !params[:user_id].empty?
       @user_like = Like.where(video_stats_params)[0]
       if !@user_like
-        # if there is no like in DB then create i
+        # if there is no like in DB then create it
         @new_like = Like.create(like_params)
         render :json => {
             :response => "liked/disliked!"
