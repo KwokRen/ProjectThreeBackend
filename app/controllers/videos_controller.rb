@@ -2,7 +2,7 @@ class VideosController < ApplicationController
   before_action :authorized, except: [:index, :show, :create, :update]
 
   def index
-    @all_videos = Video.all
+    @all_videos = Video.all.order(id: :asc)
     if @all_videos
       render :json => {
           status: "Success",
