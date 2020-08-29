@@ -31,6 +31,8 @@ class VideosController < ApplicationController
   end
 
   def update
+    # This will allow us to update the like_count and dislike_count
+    # Values are obtained from the like table
     @update_video = Video.where(id:params[:id])
     if @update_video.empty?
       render :json => {
