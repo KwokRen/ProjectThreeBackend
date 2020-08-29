@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_action :authorized, except: [:index, :show, :create]
+  before_action :authorized, except: [:index, :show, :create, :update]
 
   def index
     @all_videos = Video.all.order(id: :asc)
@@ -37,7 +37,7 @@ class VideosController < ApplicationController
           :response => "This video does not exist"
       }
     else
-      @update_video.update(video_likes_and_dislikes_params)
+      @update_video.update(like_params)
       render :json => {
           :data => @update_video
       }
@@ -57,14 +57,15 @@ class VideosController < ApplicationController
       }
     end
   end
-  private
 
-  def video_likes_and_dislikes_params
-    params.permit(:like_count, :dislike_count)
-  end
+  private
 
   def video_params
     params.permit(:title, :like_count, :dislike_count, :videoID, :thumb_default, :thumb_medium, :thumb_high)
+  end
+
+  def like_params
+    params.permit( :like_count, :dislike_count)
   end
 
 end
