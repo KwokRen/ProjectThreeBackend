@@ -67,29 +67,30 @@ For this project, we will be building a video hosting website (using Youtube API
 
 ## Functional Components
 
-#### MVP
+### MVP
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Importing Dependencies | L | 0hr | 0hr | 0hr|
-| Create Models | H | 3hr | -hr | -hr|
-| Creating Seed | L | 3hr | -hr | -hr|
-| Creating Controllers | H | 6hr| -hr | -hr |
-| Creating Routes | M | 1hr | -hr | -hr|
-| Testing Routes | H | 3hrs| -hr | -hr |
-| Deployment and Testing on Deployed Website | H | 2hr | -hr | -hr|
-| Authentication | H | 2hr | -hr | -hr|
-| Total | H | 19hrs| -hrs | -hrs |
+| Create Models | H | 3hr | 1hr | 1hr|
+| Creating Seed | L | 3hr | 1hr | 1hr|
+| Youtube API | H | 3hr | 6hr | 6hr|
+| Creating Controllers | H | 6hr| 10hr | 10hr |
+| Creating Routes | M | 1hr | 1hr | 1hr|
+| Testing Routes | H | 3hrs| 1hr | 1hr |
+| Deployment and Testing on Deployed Website | H | 2hr | 1hr | 1hr|
+| Authentication | H | 2hr | 1hr | 1hr|
+| Total | H | 19hrs| 22hrs | 22hrs |
 
-#### PostMVP
+### PostMVP
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Search Functionality | L | 2hr | -hr | -hr|
-| Categorizing Videos | L | 3.5hr | -hr | -hr|
-| Total | H | 5.5hrs| -hrs | -hrs |
+| Search Functionality | L | 2hr | 0hr | 0hr|
+| Categorizing Videos | L | 3.5hr | 0hr | 0hr|
+| Total | H | 5.5hrs| 0hrs | 0hrs |
 
 ## Additional Libraries
  Use this section to list all supporting libraries and their role in the project. 
  
- - Youtube API
+ - [Youtube API](https://developers.google.com/youtube/v3)
 
 ## Code Snippet
