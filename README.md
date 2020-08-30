@@ -1,41 +1,78 @@
-#### Website Link
+# **DeveloperToob**
 
-#### Description
+## [Frontend](https://github.com/KwokRen/ProjectThreeFrontend/blob/master/README.md)
 
-#### DeveloperToob
+### Project Snapshots
 
-A place where developers can have active conversations about content surrounding software development!
+***
 
-* This site will have active chat features as well as video playback and user login. 
+<details class="cursor">
+<summary>Desktop View</summary>
+<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.43.01_PM.png_20-49-28-430_hoyxmy.png" width="400" height= "150">
+<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.43.35_PM.png_20-49-31-670_qbdnzm.png" width="400" height= "150">
+<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.45.13_PM.png_20-49-35-575_safobt.png" width="400" height= "150">
+</details>
+<details class="cursor">
+<summary>Mobile View</summary>
+<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.46.01_PM.png_20-49-38-775_hxojlh.png" width="200" height= "320">
+<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.46.19_PM.png_20-49-41-642_fz764y.png" width="200" height= "320">
+</details>
 
-* This website is made with HTML, CSS, and Javascript in the frontend. The backend is made with Ruby on Rails, sqlite, and Postgres to create API's.
+### Website
 
-* The backend will be deployed on Heroku, while the frontend will be deployed on netlify. 
+***
 
-* Combining all these functionalities will allow us to create a full CRUD (Create,Read, Update, Delete ) Application.
+<a href="https://developertoob.netlify.app/">
+DeveloperToob
+</a>
 
+<br>
+<br>
 
+### Description
 
-#### Technologies
+***
 
+Deciding you want to be pursue a career in software engineer? Not sure where to start? DeveloperToob is the perfect place for you to begin your journey! DeveloperToob is a free web application that allows users to watch Youtube videos specifically geared towards programming and web development.
 
-<img src ="https://p.kindpng.com/picc/s/25-255290_ruby-on-rails-logo-hd-png-download.png" width="100" height="50">
-<img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtUnaaCsYdv-WgcZlcXF9DqDqRXQ35iW3L4br0_bljxXB8P8uH&s" width="50" height="50">
-<img src ="https://zdnet2.cbsistatic.com/hub/i/r/2018/04/19/092cbf81-acac-4f3a-91a1-5a26abc1721f/thumbnail/770x578/5d78c50199e6a9242367b37892be8057/postgresql-logo.png" width="70" height="50">
-<img src ="https://cdn.iconscout.com/icon/free/png-512/heroku-5-569467.png" width="50" height="50">
+Users can browse through the videos freely, or they can choose to register an account on our website. All users can then select videos of their choices and then it will open up a video player. The video player will include the title, a like and dislike feature, and the comments section. Free users can view comments and watch the video, but registered users will have access to adding comments, and using the like and dislike feature. This application is also mobile friendly!
 
+The backend is made with Ruby on Rails, and PostgreSQL. It is deployed through Heroku. 
 
-#### Features
+### Technologies
+
+***
+
+<img src ="https://cdn.worldvectorlogo.com/logos/rails-1.svg" width="100" height="50">
+<img src ="https://cdn.worldvectorlogo.com/logos/ruby.svg" width="50" height="50">
+<img src ="https://cdn.worldvectorlogo.com/logos/postgresql.svg" width="70" height="50">
+<img src ="https://cdn.worldvectorlogo.com/logos/heroku.svg" width="50" height="50">
+
+### Features
+
+***
 
 - Users can view and play videos that are on screen
 - Users can view active conversations about a video
-- Users can log in
+- Users can register
+- Users can login
 - Logged in users can comment on video conversations as well as deleting or updating comments they have created
-- Logged in users can up-vote or down-vote a video
+- Logged in users can like or dislike a video
 - Accessible over all media devices
-- Hovering over video thumbnail will give a few words description of video
 
-#### Future Implementation (Backend)
+### Future Implementation
+
+***
 
 - Refactoring code
-- Adding more routes (i.e. query for video search)
+- Fixing Bugs
+- Search Functionality
+- User's Personal Dashboard
+- Favorites
+- Watch Later
+- Cleaner UX/UI Design
+- Pagination
+- Categories
+- Login will take you back to your previous page
+- Replying to comments
+- Uploading Videos
