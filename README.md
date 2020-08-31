@@ -81,24 +81,16 @@ The backend is made with Ruby on Rails, and PostgreSQL. It is deployed through H
 
 ### User Controller
 
-***
-
 Our User Controller consists of creating the user, logging in, and verifying whether they logged in or not. The create allows users to create a user, and they will recieve a unique token for their account. The login is how users log in, making sure the token is equivalent to the username and password it matches with. 
 
 ### Video Controller
-
-***
 
 The Video Controller consists of showing all videos, showing one and updating the videos. Showing all videos is important because we need to make sure they display on the homepage. That's when we grab all the videos. We grab one video when we users click on one of the video cards. We target one specific video this way. Updating the video is used to update the likes and dislikes. 
 
 ### Like Controller
 
-***
-
 The Like Controller consists of showing one likes and dislikes for one specific video. We also had a route that grabbed informtion on whether user voted or not, so we can determine later on if they can create/update. Creating a like/dislike is determined whether the user has liked it or not. If they did, then they cannot like or dislike again because they can only like and dislike on a video once. If they did not have a entry already, then they create one. Updating was tricky, because we had to make sure that there was one and that the one they were updating were based on whether they want to like the same one (therefore removing the data) or whether they want to do the opposite (dislike for like, or vice versa).
 
 ### Comment Controller
-
-***
 
 The Comment Controller allowed us to display all, create, update and delete. Displaying all allowed us to display all the comments pertaining to one specific video. Creating allows users to create a new comment and that comment would store the video ID and the user ID of the video and user. For updating, we made sure the user that made the comment is the same as the user that wants to update it, or else they wouldn't be able to update. The same goes for the destroy function, so it would only be accessible if you had account access.
