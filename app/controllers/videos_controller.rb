@@ -46,20 +46,6 @@ class VideosController < ApplicationController
     end
   end
 
-  def create
-    @new_video = Video.new(video_params)
-    if @new_video.save
-      render :json => {
-          :response => "Success",
-          :data => @new_video
-      }
-    else
-      render :json => {
-          :error => "Could not create video"
-      }
-    end
-  end
-
   private
 
   def video_params
