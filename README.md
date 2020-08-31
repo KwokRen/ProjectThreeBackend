@@ -76,3 +76,21 @@ The backend is made with Ruby on Rails, and PostgreSQL. It is deployed through H
 - Login will take you back to your previous page
 - Replying to comments
 - Uploading Videos
+
+# The Backend
+
+### User Controller
+
+***
+
+### Video Controller
+
+***
+
+### Like Controller
+
+***
+
+### Comment Controller
+
+***
