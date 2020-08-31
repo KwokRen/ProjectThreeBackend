@@ -43,10 +43,10 @@ The backend is made with Ruby on Rails, and PostgreSQL. It is deployed through H
 
 ***
 
-<img src ="https://cdn.worldvectorlogo.com/logos/rails-1.svg" width="100" height="50">
-<img src ="https://cdn.worldvectorlogo.com/logos/ruby.svg" width="50" height="50">
-<img src ="https://cdn.worldvectorlogo.com/logos/postgresql.svg" width="70" height="50">
-<img src ="https://cdn.worldvectorlogo.com/logos/heroku.svg" width="50" height="50">
+[<img src ="https://cdn.worldvectorlogo.com/logos/ruby.svg" width="50" height="50">](https://www.ruby-lang.org/en/)
+[<img src ="https://cdn.worldvectorlogo.com/logos/rails-1.svg" width="100" height="50">](https://rubyonrails.org/)
+[<img src ="https://cdn.worldvectorlogo.com/logos/postgresql.svg" width="70" height="50">](https://www.postgresql.org/)
+[<img src ="https://cdn.worldvectorlogo.com/logos/heroku.svg" width="50" height="50">](https://www.heroku.com/)
 
 ### Features
 
