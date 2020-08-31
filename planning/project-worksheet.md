@@ -89,8 +89,44 @@ For this project, we will be building a video hosting website (using Youtube API
 | Total | H | 5.5hrs| 0hrs | 0hrs |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and their role in the project. 
  
  - [Youtube API](https://developers.google.com/youtube/v3)
 
 ## Code Snippet
+
+```
+  def create
+    if !params[:user_id].empty?
+      @user_like = Like.where(video_stats_params)[0]
+      if !@user_like
+        @new_like = Like.create(like_params)
+        render :json => {
+            :response => "liked/disliked!"
+        }
+      elsif @user_like[:is_liked] == params[:is_liked]
+        @user_like.destroy
+        render :json => {
+            :response => "Removed record",
+            :data => @user_like
+        }
+      else
+        @user_like.update(is_liked:params[:is_liked])
+        render :json => {
+              :response => "updated is_liked value"
+          }
+      end
+    else
+      render :json => {
+          :response => "Log in to vote"
+      }
+    end
+  end
+```
+
+This was our controller for the create likes route. This route seems long because it has a lot of break cases to solve, which include if the like was already their, and when it is, is it removed from the current one and given to the dislike, vice versa, or just simply removed altogether. 
+
+First we check if the user is logged in or not, because the like and dislike feature is a registered user only feature. Afterwards, we make sure the user has already created a like/dislike or not, and if it does not exist yet, then you create a like or dislike. However, you might have a user that will click on a like or dislike and it already currently exists. We then check or not if the click of like or dislike are the same as what they previously chosen or not. If it is, then we simply remove the row that is stored in our database and subtract the count from the section. If they are not, then we'd have to deduct the value of the current one and the add it to the newly clicked one. We simply do this by updating our isLiked column in our database to match what we clicked. 
+
+## Issues and Resolutions
+
+We were trying to create a like and dislike feature without creating a new model. The problem we ran into was that the video was only updating once, and many users can change it and it wasn't unique. Suresh helped us out by explaining that we needed to create another model to tackle on this situation. What this model was would be the Like model, where it would have references to both the video and the user. The likes created would have to be unique, and only one user can only vote one time on a video, so if there was already an reference to user id 1 AND video id 1, then there can't be another one. This way, users can vote once only per video. We also created a is_liked column, where it will be a boolean value. When it is a liked video, then it is set to true, otherwise if it is a dislike, then we set it to false. We evaluate the counter for likes based on the true and falses of a video. 
