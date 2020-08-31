@@ -22,11 +22,14 @@
 
 ***
 
-<a href="https://developertoob.netlify.app/">
+Frontend: <a href="https://developertoob.netlify.app/">
 DeveloperToob
 </a>
 
-<br>
+Backend: <a href="https://ga-project-three.herokuapp.com/">
+DeveloperToob
+</a>
+
 <br>
 
 ### Description
